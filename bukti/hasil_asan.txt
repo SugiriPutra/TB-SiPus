@@ -1,0 +1,91 @@
+
+== F1: Kelola buku ==
+[LULUS] F1.1 tambah buku pertama berhasil
+[LULUS] F1.2 array membesar otomatis (3 buku, kapasitas awal 2)
+[LULUS] F1.3 kode ganda ditolak
+[LULUS] F1.4 format kode salah ditolak
+[LULUS] F1.5 kategori di luar rentang ditolak
+[LULUS] F1.6 stok negatif ditolak
+[LULUS] F1.7 judul memuat '|' ditolak
+[LULUS] F1.8 ubahBuku mengganti judul
+[LULUS] F1.9 ubahBuku mempertahankan kode
+[LULUS] F1.10 hapusBuku kode tidak ada -> false
+[LULUS] F1.11 hapusBuku berhasil dan n berkurang
+
+== F2: Kelola anggota ==
+[LULUS] F2.1 tambah anggota berhasil
+[LULUS] F2.2 array anggota membesar otomatis
+[LULUS] F2.3 ID ganda ditolak
+[LULUS] F2.4 format ID salah ditolak
+[LULUS] F2.5 cariAnggota tidak ada -> nullptr
+[LULUS] F2.6 ubahAnggota mengganti nama
+
+== F3: Peminjaman ==
+[LULUS] F3.1 pinjam berhasil
+[LULUS] F3.2 stok berkurang, sedangPinjam & totalDipinjam bertambah
+[LULUS] F3.3 bukuSedangDipinjam true untuk buku dipinjam
+[LULUS] F3.4 anggota tidak ada ditolak
+[LULUS] F3.5 buku tidak ada ditolak
+[LULUS] F3.6 tanggal tidak valid ditolak (30 Feb)
+[LULUS] F3.7 pinjam buku ke-2 dan ke-3 berhasil
+[LULUS] F3.8 buku ke-4 ditolak (batas 3)
+[LULUS] F3.9 stok 0 ditolak (BK-001 stok 1 sudah habis)
+
+== F4: Pengembalian & denda ==
+[LULUS] F4.1 selisihHari lintas tahun (30/12/2026 -> 2/1/2027 = 3)
+[LULUS] F4.2 selisihHari tahun kabisat (28/2/2028 -> 1/3/2028 = 2)
+[LULUS] F4.3 selisihHari tahun non-kabisat (28/2/2027 -> 1/3/2027 = 1)
+[LULUS] F4.4 tambahHari 3/11/2026 + 7 = 10/11/2026
+[LULUS] F4.5 kembali tepat waktu (hari ke-7): denda 0
+[LULUS] F4.6 stok & sedangPinjam pulih setelah kembali
+[LULUS] F4.7 terlambat 3 hari: denda Rp3.000 (parameter keluaran)
+[LULUS] F4.8 kembali dua kali ditolak
+[LULUS] F4.9 nomor transaksi tidak ada ditolak
+[LULUS] F4.10 tanggal kembali sebelum tanggal pinjam ditolak
+[LULUS] F4.11 bukuSedangDipinjam false setelah dikembalikan
+
+== F5: Pencarian ==
+[LULUS] F5.1 cariKode ketemu
+[LULUS] F5.2 cariKode tidak ada -> nullptr
+[LULUS] F5.3 cari judul tidak peka huruf besar/kecil
+[LULUS] F5.4 cari judul tidak ada -> 0
+[LULUS] F5.5 binarySearchKode ketemu pada indeks benar
+[LULUS] F5.6 binarySearchKode di ujung awal & akhir
+[LULUS] F5.7 binarySearchKode tidak ada -> -1
+[LULUS] F5.8 binarySearchKode pada array kosong -> -1
+
+== F6: Pengurutan ==
+[LULUS] F6.1 urutkanKode menaik
+[LULUS] F6.2 urutkanJudul menaik (alfabetis)
+[LULUS] F6.3 urutkanDipinjam menurun
+[LULUS] F6.4 record utuh ikut berpindah (kode & judul tetap cocok)
+
+== F7: Rekap kategori x bulan ==
+[LULUS] F7.1 sel [Pemrograman][Nov] = 2
+[LULUS] F7.2 sel [Basis Data][Nov] = 1
+[LULUS] F7.3 sel lain bernilai 0
+[LULUS] F7.4 jumlah seluruh sel = jumlah transaksi
+[LULUS] F7.5 kategori terpopuler = Pemrograman (indeks 0)
+[LULUS] F7.6 filter tahun tanpa data -> semua 0 dan tidak ada terpopuler
+
+== F8: Total denda & riwayat (rekursif) ==
+[LULUS] F8.1 totalDendaRekursif = Rp3.000
+[LULUS] F8.2 totalDendaRekursif array kosong = 0
+[LULUS] F8.3 riwayat AG-001 = 3 transaksi
+[LULUS] F8.4 riwayat anggota tanpa transaksi = 0
+
+== Fitur tambahan: simpan/muat berkas ==
+[LULUS] B.1 simpanData berhasil
+[LULUS] B.2 muatData berhasil
+[LULUS] B.3 jumlah data sama setelah dimuat
+[LULUS] B.4 isi data sama (judul, denda, tanggal kembali)
+[LULUS] B.5 muatData berkas tidak ada -> false dan data lama utuh
+[LULUS] B.6 berkas rusak ditolak dan data lama tidak berubah
+
+== Memori dinamis ==
+[LULUS] M.1 bebaskan mengosongkan pointer
+[LULUS] M.2 bebaskan mengosongkan n dan kapasitas
+[LULUS] M.3 isiDataContoh mengisi data kosong dan menolak data tidak kosong
+
+===============================
+Hasil: 68 / 68 kasus uji lulus
